@@ -72,13 +72,76 @@
 
 
     // 11 -Ask the user for a sentence and count both the length of the sentence and the number of words in it.
+        function word_and_number_counter($data){
+            $new_data = strtolower($data);
+            $count_lenght = strlen($new_data);
+            $count_word = str_word_count($new_data);
+            $result = "$data" . "= " ."$count_lenght ,$count_word";
 
-    
+            return $result;
+        }
+
+        echo word_and_number_counter("User will give data ")."<br>";
+
     // 12 -Write a function that takes a string and a word as input, then returns the position of the word using strpos().
+    function returnPosition ($data,$check){
+        if($data !== (string)$data){
+            return "please input a text";
+        }
+        $finder = strpos($data,$check);
+        $finder?"Yes found successfully in at $finder":"Sorry,Not found";
+        return $finder;
+    }
+    echo returnPosition("chere diye natai suto urai only fata","fata")  ."<br>";
+
+
+
     // 13 -Convert a numeric string ("12345") into an integer and check its type using var_dump().
+    $StringLikeInterger = "300";
+    echo "Before change this it is -->" . var_dump($StringLikeInterger) ."<br>";;
+    $coverToActualInt = (int)$StringLikeInterger;
+    echo "After change this it is -->" . var_dump($coverToActualInt) ."<br>";;
+
+
+
+
+
+
     //  14-Write a script that finds the position of the first occurrence of "@" in an email address and checks if it is valid.
+
+    function checkEmail ($userEmail){
+        $atIndex = strpos($userEmail,"@");
+        if($atIndex===false || $atIndex===0 || $atIndex===strlen($userEmail)-1){
+            return "invalid email <br>";
+        }
+        else{
+
+            return "Email found in index $atIndex amd e,ail in valid <br>";
+        }
+    }
+
+    echo checkEmail("joweld35@gmail.com");
+
+
     //  15-Create a program that replaces "bad" with "good" in a sentence only if "bad" exists using strpos()
 
+    function replace_word ($import){
+        $newImport = strpos($import,"bad");
+       if($newImport){
+        $result = str_replace("bad","good",$import);
+        return $result;
+       }
+       else{
+        return $import;
+       }
+    }
+
+    echo replace_word("You are a bad guy") . "<br>"; // reuslt - You are a good guy
+    echo replace_word("You are a  guy") . "<br>"; // reuslt - You are a good guy
+
+
+
+  
 
 
 
