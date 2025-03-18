@@ -22,3 +22,137 @@ function check_maxi_and_mini(){
     
 }
 echo check_maxi_and_mini();
+
+
+
+
+
+
+//🚀 2. Reverse a 1D Array
+//একটি 1D অ্যারে উল্টো করে প্রিন্ট করতে হবে।
+$fruits = ["Apple", "Mango", "Banana", "Orange"];
+$reverse_fruit = array_reverse($fruits);
+echo "<pre>";
+print_r($reverse_fruit);
+echo "</pre>";
+
+
+
+//3. Sum of All Elements in a 1D Array
+//একটি 1D অ্যারে দেওয়া থাকবে, তার মোট যোগফল বের করতে হবে।
+
+function calculate_sum (){
+    $numbersY = [10, 20, 30, 40, 50];
+    $count=0;
+    foreach($numbersY as $num){
+        $count +=$num;
+}
+return $count;
+}
+echo calculate_sum()."<br>";
+
+
+
+
+//4. Find the Largest Number from a 2D Array
+//একটি 2D অ্যারে দেওয়া থাকবে, যেখানে কয়েকটি সংখ্যা থাকবে। তোমার কাজ হলো, সর্বোচ্চ সংখ্যাটি খুঁজে বের করা।
+
+$matrix = [
+    [2, 5, 8],
+    [12, 9, 7],
+    [4, 15, 3]
+];
+
+$max_y = 0;
+foreach($matrix as $row){
+    foreach($row as $num){
+        if($num>$max_y)$max_y=$num;
+    } 
+}
+echo "max num -------- > $max_y <br>";
+
+
+
+
+
+
+//🚀 5. Calculate Total Marks from Associative Array
+//একটি associative মাল্টিডাইমেনশনাল অ্যারে দেওয়া থাকবে, যেখানে বিভিন্ন ছাত্রের নাম ও তাদের প্রাপ্ত নম্বর দেওয়া থাকবে। তোমার কাজ হলো প্রত্যেক ছাত্রের মোট নম্বর বের করা।
+
+$students = [
+    "Abir" => ["Math" => 85, "Science" => 90, "English" => 78],
+    "Rahim" => ["Math" => 88, "Science" => 92, "English" => 81],
+    "Karim" => ["Math" => 79, "Science" => 85, "English" => 76]
+];
+
+function find_out_total_marks_of_students($students){
+    foreach($students as $name=>$subjects){
+        $totla_marks = 0;
+       foreach($subjects as $subject=>$num){
+        $totla_marks +=$num;
+       }
+       echo "$name's totla marks is $totla_marks  <br>";    
+    }
+}
+find_out_total_marks_of_students($students);
+
+
+
+//🚀 6. Count the Number of Elements in a Multidimensional Array
+//একটি মাল্টিডাইমেনশনাল অ্যারে দেওয়া থাকবে, যেখানে বিভিন্ন লিস্ট থাকবে। তোমাকে সেই অ্যারেতে মোট কয়টি এলিমেন্ট আছে তা গণনা করতে হবে।
+
+$data = [
+    ["A", "B", "C"],
+    ["D", "E"],
+    ["F", "G", "H", "I"]
+];
+
+
+function find_elements($data){
+    $total_ele = 0;
+foreach($data as $deta){
+    foreach($deta as $ele){
+        $total_ele+=1;
+    }
+}
+return $total_ele;  
+}
+echo find_elements($data);
+
+
+
+//🚀 7. Find Students Who Scored More Than 80 in English
+//একটি associative মাল্টিডাইমেনশনাল অ্যারে দেওয়া থাকবে,
+//যেখানে বিভিন্ন ছাত্রের নাম ও তাদের বিষয়ভিত্তিক নম্বর থাকবে। তোমার কাজ হলো, যেসব ছাত্র ইংরেজিতে ৮০ এর বেশি পেয়েছে, তাদের নাম প্রিন্ট করা।
+$students = [
+    "Arif" => ["Math" => 78, "Science" => 82, "English" => 85],
+    "Jamal" => ["Math" => 90, "Science" => 88, "English" => 75],
+    "Sabbir" => ["Math" => 85, "Science" => 89, "English" => 92]
+];
+
+
+
+
+
+$students = [
+    "Arif" => ["Math" => 78, "Science" => 82, "English" => 85],
+    "Jamal" => ["Math" => 90, "Science" => 88, "English" => 75],
+    "Sabbir" => ["Math" => 85, "Science" => 89, "English" => 92]
+];
+
+function find_best($students){
+    $best_students = [];  // To store students with English marks > 80
+    foreach($students as $name => $marks){
+        if($marks["English"] > 80){
+            $best_students[] = $name;  // Add name to the array
+        }
+    }
+    return $best_students;  // Return the array of students
+}
+
+$best_students = find_best($students);
+echo "<br>Students who scored more than 80 in English:<br>";
+foreach($best_students as $student) {
+    echo $student . "<br>";  // Output all the student names
+}
+
