@@ -129,7 +129,7 @@ $students = [
     "Jamal" => ["Math" => 90, "Science" => 88, "English" => 75],
     "Sabbir" => ["Math" => 85, "Science" => 89, "English" => 92]
 ];
-
+    
 
 
 
@@ -156,3 +156,42 @@ foreach($best_students as $student) {
     echo $student . "<br>";  // Output all the student names
 }
 
+
+
+
+
+
+
+
+
+$students_a = [
+    [101, "Alice", 85],
+    [102, "Bob", 78],
+    [100, "Charlie", 92],
+    [104, "David", 88]
+];
+
+
+$dekh=usort($students_a,function($a,$b){
+    return $a[0]-$b[0];
+});
+
+foreach($students_a as $origin_student){
+    echo "ID: " . $origin_student[0] . " Name: " . $origin_student[1] . " Score: " . $origin_student[2] . "<br>";
+
+}
+
+
+
+
+$student_x = [
+    "name" => "Abir",
+    "age" => 24,
+    "skills" => ["PHP", "JavaScript", "Laravel"]
+];
+
+// Convert the associative array to JSON format
+$json = json_encode($student_x, JSON_PRETTY_PRINT);
+
+// Output the JSON string
+echo $json;
